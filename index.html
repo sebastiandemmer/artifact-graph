@@ -18,8 +18,9 @@
     <div id="cy"></div>
     <script type="module"> 
     import cytoscape from "./cyptoscape.esm.min.js";
-    import data from './data.json' assert { type: 'JSON' };
-    console.log();
+    import data from './data.json' assert { type: 'json' };
+
+    console.log(data);
     var cy = cytoscape({
         container: document.getElementById('cy'),
         elements: [
