@@ -12,9 +12,6 @@
             left: 0px;
             border: 1px dotted grey;
         }
-        .file {
-            type: rectangle
-        }
     </style>
     <title>Artifact Graph</title>
 </head>
@@ -46,6 +43,12 @@
                 selector: 'edge',
                 style: {
                     label: 'data(id)'
+                }
+            },
+            {
+                selector: '.file',
+                style: {
+                    type: 'rectangle'
                 }
             }
         ]
