@@ -12,6 +12,9 @@
             left: 0px;
             border: 1px dotted grey;
         }
+        .file {
+            type: rectangle
+        }
     </style>
     <title>Artifact Graph</title>
 </head>
@@ -20,7 +23,7 @@
     <div id="cy"></div>
     <script type="module"> 
     import cytoscape from "./js/cyptoscape.esm.min.js";
-    import data from './data.json' assert { type: 'json' };
+    import data from './graph_data.json' assert { type: 'json' };
     var imported_nodes = data['nodes'];
     var imported_edges = data['edges']; 
 
@@ -32,13 +35,20 @@
             edges: imported_edges
         },
         style: [
-        {
-            selector: 'node',
-            style: {
-                'background-color': 'red',
-                label: 'data(id)'
+            {
+                selector: 'node',
+                style: {
+                    'background-color': 'red',
+                    label: 'data(id)'
+                }
+            },
+            {
+                selector: 'edge',
+                style: {
+                    label: 'data(id)'
+                }
             }
-        }]
+        ]
 
       });
 
