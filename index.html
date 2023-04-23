@@ -5,6 +5,7 @@
 <head>
     <script src="https://unpkg.com/weaverjs@1.2.0/dist/weaver.min.js"></script>
     <script src="js/cytoscape-spread.js"></script>
+    <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
     <style>
         #cy {
             width: 90%;
@@ -26,46 +27,47 @@
     var imported_nodes = data['nodes'];
     var imported_edges = data['edges']; 
 
-    console.log(data);
-    var cy = cytoscape({
-        container: document.getElementById('cy'),
-        layout: {
-			name: 'spread',
-            minDist: 40
-        },
-        elements: {
-            nodes: imported_nodes,
-            edges: imported_edges
-        },
-        style: [
-            {
-                selector: 'node',
-                style: {
-                    'background-color': 'red',
-                    label: 'data(id)'
-                }
+    window.addEventListener('DOMContentLoaded', function(){
+        var cy = cytoscape({
+            container: document.getElementById('cy'),
+            layout: {
+                name: 'spread',
+                minDist: 40
             },
-            {
-                selector: 'edge',
-                style: {
-                    label: 'data(id)'
-                }
+            elements: {
+                nodes: imported_nodes,
+                edges: imported_edges
             },
-            {
-                selector: '.file',
-                style: {
-                    shape: 'rectangle'
+            style: [
+                {
+                    selector: 'node',
+                    style: {
+                        'background-color': 'red',
+                        label: 'data(id)'
+                    }
+                },
+                {
+                    selector: 'edge',
+                    style: {
+                        label: 'data(id)'
+                    }
+                },
+                {
+                    selector: 'node.file',
+                    style: {
+                        shape: 'rectangle'
+                    }
+                },
+                {
+                    selector: 'node.blue',
+                    style: {
+                        'background-color': 'blue'
+                    }
                 }
-            },
-            {
-                selector: '.blue',
-                style: {
-                    'background-color': 'blue'
-                }
-            }
-        ]
+            ]
 
-      });
+        });
+    });
 
     </script>
     </div>
