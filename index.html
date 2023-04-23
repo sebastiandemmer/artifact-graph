@@ -27,6 +27,9 @@
     console.log(data);
     var cy = cytoscape({
         container: document.getElementById('cy'),
+        layout: {
+			name: 'random'
+        },
         elements: {
             nodes: imported_nodes,
             edges: imported_edges
@@ -49,6 +52,12 @@
                 selector: '.file',
                 style: {
                     shape: 'rectangle'
+                }
+            },
+            {
+                selector: '.blue',
+                style: {
+                    'background-color': 'blue'
                 }
             }
         ]
