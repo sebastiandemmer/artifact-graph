@@ -21,8 +21,8 @@
     <script type="module"> 
     import cytoscape from "./js/cyptoscape.esm.min.js";
     import data from './data.json' assert { type: 'json' };
-    imported_nodes = data['nodes'];
-    imported_edges = data['edges']; 
+    var imported_nodes = data['nodes'];
+    var imported_edges = data['edges']; 
 
     console.log(data);
     var cy = cytoscape({
