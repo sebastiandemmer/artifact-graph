@@ -11,14 +11,14 @@
 </style>
 <html>
 <head>
-    <title>Tutorial 1: Getting Started</title>
+    <title>Artifact Graph</title>
     <script src="cyptoscape.esm.min.js"></script>
 </head>
 <body>
     <div id="cy"></div>
     <script> 
-    //import data from './data.json' assert { type: 'JSON' };
-
+    import data from './data.json' assert { type: 'JSON' };
+    console.log()
     var cy = cytoscape({
         container: document.getElementById('cy'),
         elements: [
@@ -32,6 +32,12 @@
                 }
             }]
       });
+
     </script>
+    <div id="json">
+        <script>
+            document.getElementById('json').innerHTML = data
+        </script>
+    </div>
 </body>
 </html>
