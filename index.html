@@ -28,18 +28,8 @@
     var cy = cytoscape({
         container: document.getElementById('cy'),
         elements: {
-            nodes: [
-                { data: { id: 'a' } },
-                { data: { id: 'b' } }
-            ],
-            edges: [
-                {
-                    data: {
-                    id: 'ab',
-                    source: 'a',
-                    target: 'b'
-                }}
-            ]
+            nodes: imported_nodes,
+            edges: imported_edges
         },
         style: [
         {
@@ -55,7 +45,6 @@
       document.getElementById('json').innerHTML = data;
 
     </script>
-    <div id="json">
     </div>
 </body>
 </html>
