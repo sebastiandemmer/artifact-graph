@@ -1,0 +1,46 @@
+{
+    "nodes": [
+        //FILES
+        //evtx files
+        { "data": { "id": "file_taskscheduler", "label": "File", "file_path":"C:\\Windows\\System32\\winevt\\logs\\TaskScheduler%4Operational.evtx" }},
+        { "data": { "id": "file_security", "label": "File", "file_path":"C:\\Windows\\System32\\winevt\\logs\\Security.evtx" }},
+
+        { "data": { "id": "file_tasks", "label": "File", "file_path":"C:\\Windows\\System32\\Tasks" }},
+        { "data": { "id": "file_tasks_jobs", "label": "File", "file_path":"C:\\Windows\\Tasks" }},
+
+        //ARTIFACTS
+
+        //EVENTS
+
+        //task scheduler events
+        { "data": { "id": "task_e106", "label": "Event", "event_id":106 }},
+        { "data": { "id": "task_e140", "label": "Event", "event_id":140 }},
+        { "data": { "id": "task_e141", "label": "Event", "event_id":141 }},
+        { "data": { "id": "task_e200", "label": "Event", "event_id":200 }},
+        { "data": { "id": "task_e201", "label": "Event", "event_id":201 }},
+
+        //security task events
+        { "data": { "id": "task_e4698", "label": "Event", "event_id":4698 }},
+        { "data": { "id": "task_e4699", "label": "Event", "event_id":4699 }},
+        { "data": { "id": "task_e4700", "label": "Event", "event_id":4700 }},
+        { "data": { "id": "task_e4701", "label": "Event", "event_id":4701 }},
+        { "data": { "id": "task_e4702", "label": "Event", "event_id":4702 }}
+
+    
+    ],
+    "edges": [
+        
+        { "data": {"id":"task_e106_file_taskscheduler", "source":"file_taskscheduler" ,"label":"CONTAINS","target":"task_e106"}},
+        { "data": {"id":"task_e140_file_taskscheduler", "source":"file_taskscheduler" ,"label":"CONTAINS","target":"task_e140"}},
+        { "data": {"id":"task_e141_file_taskscheduler", "source":"file_taskscheduler" ,"label":"CONTAINS","target":"task_e141"}},
+        { "data": {"id":"task_e200_file_taskscheduler", "source":"file_taskscheduler" ,"label":"CONTAINS","target":"task_e200"}},
+        { "data": {"id":"task_e201_file_taskscheduler", "source":"file_taskscheduler" ,"label":"CONTAINS","target":"task_e201"}}
+        { "data": {"id":"task_e106_file_security", "source":"file_security" ,"label":"CONTAINS","target":"task_e4698"}},
+        { "data": {"id":"task_e140_file_security", "source":"file_security" ,"label":"CONTAINS","target":"task_e4699"}},
+        { "data": {"id":"task_e141_file_security", "source":"file_security" ,"label":"CONTAINS","target":"task_e4700"}},
+        { "data": {"id":"task_e200_file_security", "source":"file_security" ,"label":"CONTAINS","target":"task_e4701"}},
+        { "data": {"id":"task_e201_file_security", "source":"file_security" ,"label":"CONTAINS","target":"task_e4702"}}
+           
+        
+    ]
+}
