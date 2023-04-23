@@ -12,24 +12,26 @@
 <html>
 <head>
     <title>Tutorial 1: Getting Started</title>
+    <script src="cytoscape.js"></script>
+</head>
+<body>
     <div id="cy"></div>
-    <script type="module">
-        //import data from './data.json' assert { type: 'JSON' };
-        import cytoscape from "./cytoscape.esm.min.js";
-    
-        var cy = cytoscape({
+    <script> 
+    //import data from './data.json' assert { type: 'JSON' };
+
+    var cy = cytoscape({
         container: document.getElementById('cy'),
         elements: [
             { data: { id: 'a' } },
             { data: { id: 'b' } },
             {
-            data: {
+                data: {
                 id: 'ab',
                 source: 'a',
                 target: 'b'
-            }
+                }
             }]
-        });
+      });
     </script>
-</head>
+</body>
 </html>
