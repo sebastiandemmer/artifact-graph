@@ -1,3 +1,20 @@
 {
-    "test_key":"test_value"
+    "nodes": [
+        {
+            "data": { "id": "a" }
+        },
+    
+            {
+            "data": { "id": "b" }
+            }
+    ],
+    "edges": [
+        {
+            "data": {
+                "id": "ab",
+                "source": "a",
+                "target": "b"
+            }
+        }
+    ]
 }

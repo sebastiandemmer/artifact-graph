@@ -19,20 +19,26 @@
     <script type="module"> 
     import cytoscape from "./js/cyptoscape.esm.min.js";
     import data from './data.json' assert { type: 'json' };
+    imported_nodes = data['nodes'];
+    imported_edges = data['edges']; 
 
     console.log(data);
     var cy = cytoscape({
         container: document.getElementById('cy'),
-        elements: [
-            { data: { id: 'a' } },
-            { data: { id: 'b' } },
-            {
-                data: {
-                id: 'ab',
-                source: 'a',
-                target: 'b'
-                }
-            }],
+        elements: {
+            nodes: [
+                { data: { id: 'a' } },
+                { data: { id: 'b' } }
+            ],
+            edges: [
+                {
+                    data: {
+                    id: 'ab',
+                    source: 'a',
+                    target: 'b'
+                }}
+            ]
+        },
         style: [
         {
             selector: 'node',
@@ -44,7 +50,7 @@
 
       });
 
-      //document.getElementById('json').innerHTML = data;
+      document.getElementById('json').innerHTML = data;
 
     </script>
     <div id="json">
