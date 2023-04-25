@@ -33,8 +33,8 @@
         var cy = cytoscape({
             container: document.getElementById('cy'),
             layout: {
-                name: 'spread',
-                minDist: 40
+                name: 'random',
+                // minDist: 40
             },
             elements: {
                 nodes: imported_nodes,
@@ -55,13 +55,13 @@
                     }
                 },
                 {
-                    selector: 'node.file',
+                    selector: 'node[class="file"]',
                     style: {
                         shape: 'rectangle'
                     }
                 },
                 {
-                    selector: 'node.blue',
+                    selector: 'node[class="blue"]',
                     style: {
                         'background-color': 'blue'
                     }
