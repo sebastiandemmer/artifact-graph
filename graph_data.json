@@ -7,17 +7,17 @@
         { "data": { "id": "file_tasks", "label": "File", "file_path":"C:\\Windows\\System32\\Tasks" },"classes":["file"]},
         { "data": { "id": "file_tasks_jobs", "label": "File", "file_path":"C:\\Windows\\Tasks" },"classes":["file"]},
 
-        { "data": { "id": "task_e106", "label": "Event", "event_id":106 },"classes":["blue"]},
-        { "data": { "id": "task_e140", "label": "Event", "event_id":140 },"classes":["blue"]},
-        { "data": { "id": "task_e141", "label": "Event", "event_id":141 },"classes":["blue"]},
-        { "data": { "id": "task_e200", "label": "Event", "event_id":200 },"classes":["blue"]},
-        { "data": { "id": "task_e201", "label": "Event", "event_id":201 },"classes":["blue"]},
+        { "data": { "id": "task_e106", "label": "Event", "tooltop":"Task Scheduler - Event 106 - Scheduled task created", "event_id":106 },"classes":["blue"]},
+        { "data": { "id": "task_e140", "label": "Event", "tooltop":"Task Scheduler - Event 140 - Scheduled task updated", "event_id":140 },"classes":["blue"]},
+        { "data": { "id": "task_e141", "label": "Event", "tooltop":"Task Scheduler - Event 141 - Scheduled task deleted", "event_id":141 },"classes":["blue"]},
+        { "data": { "id": "task_e200", "label": "Event", "tooltop":"Task Scheduler - Event 200 - Scheduled task executed", "event_id":200 },"classes":["blue"]},
+        { "data": { "id": "task_e201", "label": "Event", "tooltop":"Task Scheduler - Event 201 - Scheduled task completed", "event_id":201 },"classes":["blue"]},
 
-        { "data": { "id": "task_e4698", "label": "Event", "event_id":4698 },"classes":["blue"]},
-        { "data": { "id": "task_e4699", "label": "Event", "event_id":4699 },"classes":["blue"]},
-        { "data": { "id": "task_e4700", "label": "Event", "event_id":4700 },"classes":["blue"]},
-        { "data": { "id": "task_e4701", "label": "Event", "event_id":4701 },"classes":["blue"]},
-        { "data": { "id": "task_e4702", "label": "Event", "event_id":4702 },"classes":["blue"]}
+        { "data": { "id": "task_e4698", "label": "Event", "tooltop":"Task Scheduler - Event 4698 - Scheduled task created", "event_id":4698 },"classes":["blue"]},
+        { "data": { "id": "task_e4699", "label": "Event", "tooltop":"Task Scheduler - Event 4699 - Scheduled task deleted", "event_id":4699 },"classes":["blue"]},
+        { "data": { "id": "task_e4700", "label": "Event", "tooltop":"Task Scheduler - Event 4700 - Scheduled task enabled", "event_id":4700 },"classes":["blue"]},
+        { "data": { "id": "task_e4701", "label": "Event", "tooltop":"Task Scheduler - Event 4701 - Scheduled task disabled", "event_id":4701 },"classes":["blue"]},
+        { "data": { "id": "task_e4702", "label": "Event", "tooltop":"Task Scheduler - Event 4702 - Scheduled task updated","event_id":4702 },"classes":["blue"]}
 
     
     ],

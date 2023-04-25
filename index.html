@@ -63,6 +63,29 @@
 
         });
 
+        cy.on('mouseover', 'node', function(event) {
+        var node = event.target;
+        var tooltip = node.data('tooltip');
+        node.qtip({
+            content: tooltip,
+            show: {
+            event: event.type,
+            ready: true
+            },
+            hide: {
+            event: 'mouseout unfocus'
+            },
+            style: {
+            classes: 'qtip-bootstrap'
+            }
+        }, event);
+        });
+
+        cy.on('mouseout', 'node', function(event) {
+            var node = event.target;
+            node.qtip('hide');
+        });
+
     });
 
     </script>
