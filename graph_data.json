@@ -1,23 +1,23 @@
 {
     "nodes": [
         
-        { "data": { "id": "file_taskscheduler", "label": "File", "classes":"file", "file_path":"C:\\Windows\\System32\\winevt\\logs\\TaskScheduler%4Operational.evtx" }},
-        { "data": { "id": "file_security", "label": "File", "classes":"file", "file_path":"C:\\Windows\\System32\\winevt\\logs\\Security.evtx" }},
+        { "data": { "id": "file_taskscheduler", "label": "File", "classes":["file"], "file_path":"C:\\Windows\\System32\\winevt\\logs\\TaskScheduler%4Operational.evtx" }},
+        { "data": { "id": "file_security", "label": "File", "classes":["file"], "file_path":"C:\\Windows\\System32\\winevt\\logs\\Security.evtx" }},
 
-        { "data": { "id": "file_tasks", "label": "File", "classes":"file", "file_path":"C:\\Windows\\System32\\Tasks" }},
-        { "data": { "id": "file_tasks_jobs", "label": "File", "classes":"file", "file_path":"C:\\Windows\\Tasks" }},
+        { "data": { "id": "file_tasks", "label": "File", "classes":["file"], "file_path":"C:\\Windows\\System32\\Tasks" }},
+        { "data": { "id": "file_tasks_jobs", "label": "File", "classes":["file"], "file_path":"C:\\Windows\\Tasks" }},
 
-        { "data": { "id": "task_e106", "label": "Event", "classes":"blue", "event_id":106 }},
-        { "data": { "id": "task_e140", "label": "Event", "classes":"blue", "event_id":140 }},
-        { "data": { "id": "task_e141", "label": "Event", "classes":"blue", "event_id":141 }},
-        { "data": { "id": "task_e200", "label": "Event", "classes":"blue", "event_id":200 }},
-        { "data": { "id": "task_e201", "label": "Event", "classes":"blue", "event_id":201 }},
+        { "data": { "id": "task_e106", "label": "Event", "classes":["blue"], "event_id":106 }},
+        { "data": { "id": "task_e140", "label": "Event", "classes":["blue"], "event_id":140 }},
+        { "data": { "id": "task_e141", "label": "Event", "classes":["blue"], "event_id":141 }},
+        { "data": { "id": "task_e200", "label": "Event", "classes":["blue"], "event_id":200 }},
+        { "data": { "id": "task_e201", "label": "Event", "classes":["blue"], "event_id":201 }},
 
-        { "data": { "id": "task_e4698", "label": "Event", "classes":"blue", "event_id":4698 }},
-        { "data": { "id": "task_e4699", "label": "Event", "classes":"blue", "event_id":4699 }},
-        { "data": { "id": "task_e4700", "label": "Event", "classes":"blue", "event_id":4700 }},
-        { "data": { "id": "task_e4701", "label": "Event", "classes":"blue", "event_id":4701 }},
-        { "data": { "id": "task_e4702", "label": "Event", "classes":"blue", "event_id":4702 }}
+        { "data": { "id": "task_e4698", "label": "Event", "classes":["blue"], "event_id":4698 }},
+        { "data": { "id": "task_e4699", "label": "Event", "classes":["blue"], "event_id":4699 }},
+        { "data": { "id": "task_e4700", "label": "Event", "classes":["blue"], "event_id":4700 }},
+        { "data": { "id": "task_e4701", "label": "Event", "classes":["blue"], "event_id":4701 }},
+        { "data": { "id": "task_e4702", "label": "Event", "classes":["blue"], "event_id":4702 }}
 
     
     ],
