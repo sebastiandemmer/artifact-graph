@@ -3,8 +3,9 @@
 
 <html>
 <head>
-    
-    
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
     <script src="https://unpkg.com/cytoscape/dist/cytoscape.min.js"></script>
     <script src="https://unpkg.com/weaverjs@1.2.0/dist/weaver.min.js"></script>
     <script src="js/cytoscape-spread.js"></script>
@@ -23,12 +24,7 @@
 <body>
     <h1>Artifact Graph</h1>
     <div id="cy"></div>
-    <script type="module"> 
-    import cytoscape from "./js/cytoscape.esm.min.js";
-    import data from './graph_data.json' assert { type: 'json' };
-    var imported_nodes = data['nodes'];
-    var imported_edges = data['edges']; 
-
+    <script> 
     window.addEventListener('DOMContentLoaded', function(){
         var cy = cytoscape({
             container: document.getElementById('cy'),
@@ -36,10 +32,7 @@
                 name: 'spread',
                 // minDist: 40
             },
-            elements: {
-                nodes: imported_nodes,
-                edges: imported_edges
-            },
+            elements: fetch('./graph_data.json').then(function( res ){ return res.json(); }),
             style: [
                 {
                     selector: 'node',
@@ -69,8 +62,6 @@
             ]
 
         });
-        console.log(cy.nodes().nodes().classes());
-        console.log(cy.nodes().nodes());
 
     });
 
