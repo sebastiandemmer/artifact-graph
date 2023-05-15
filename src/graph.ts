@@ -1,4 +1,4 @@
-import { Orb, NodeShapeType, OrbEventType, GraphObjectState } from '@memgraph/orb';
+import { Orb, NodeShapeType, OrbEventType, GraphObjectState, DefaultView } from '@memgraph/orb';
 import  graph_data from '../data/graph_data.json';
 
 
@@ -18,7 +18,6 @@ export interface MyEdge {
 function highlight_nodes(orb:Orb, nodes_list: Array<number>): void {
     nodes_list.forEach(node_id => {
         const node = orb.data.getNodeById(node_id)!;
-        console.log(node);
         node.state = GraphObjectState.SELECTED
     });
 }
@@ -30,7 +29,11 @@ export function redraw_graph(orb: Orb, nodes: Array<any>, edges: Array<any>): vo
     var nodeIds = orb.data.getNodes().map(node => node.id);
     // No need to get edges because if we remove all the nodes, all the edges will be removed too
     orb.data.remove({ nodeIds: nodeIds });
-
+    if (nodes.length == 0) {
+        console.log("Length of nodes: "+nodes.length);
+        orb.view.render();
+        return
+    }
     //add new nodes
     orb.data.merge({edges: edges, nodes: nodes});
 
@@ -47,6 +50,14 @@ export function redraw_graph(orb: Orb, nodes: Array<any>, edges: Array<any>): vo
 }
 
 export function style_graph(orb: Orb) : void {
+    orb.setView(
+        (context) => new DefaultView(context, {
+            simulation: {
+                isPhysicsEnabled: true
+            }
+        })
+    )
+
     orb.data.setDefaultStyle({
         getNodeStyle(node) {
             const basicStyle = {
