@@ -5,6 +5,9 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "repository": {
+    "url": "git+https://github.com/sebastiandemmer/artifact-graph.git"
+  },
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "contributors": [],
@@ -24,7 +27,9 @@
     "prepare": "husky install",
     "build:dev": "webpack --mode=development",
     "build:prod": "webpack --mode=production --node-env=production",
-    "watch": "webpack --watch"
+    "watch": "webpack --watch",
+    "predeploy": "npm run build",
+    "deploy-gh-pages": "gh-pages -d dist"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",
@@ -84,6 +89,7 @@
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-jest": "26.2.2",
     "eslint-plugin-prettier": "4.0.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.1",
     "http-server": "^14.1.1",
     "husky": "^8.0.1",
