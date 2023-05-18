@@ -114,21 +114,24 @@ export function style_graph(orb: Orb) : void {
                 color: '#999999',
                 colorHover: '#1d1d1d',
                 colorSelected: '#1d1d1d',
-                fontSize: 3,
+                fontSize: 0,
                 width: 0.3,
                 widthHover: 0.9,
                 widthSelected: 0.9,
                 label: edge.data.label,
+
             };
         },
     });
 }
 
 export function setup_controls(orb: Orb) : void {
-    //add all neigbours
+    var edge_label_toggle = false;
+
+    //add all neigbours button
     const btn_all_neighbors = document.getElementById("all_neighbors_btn")!;
     btn_all_neighbors?.addEventListener('click', function handleClick() {
-        console.log('button clicked');
+        console.log('"all_neighbors_btn" button clicked');
 
         const original_nodes = orb.data.getNodes();
         
@@ -160,11 +163,24 @@ export function setup_controls(orb: Orb) : void {
       });
     
     
-    // 
+    //add all neigbours button
+    const btn_edges_toggle = document.getElementById("toggle_edge_labels")!;
+    btn_edges_toggle?.addEventListener('click', function handleClick() {
+        console.log('"toggle_edge_labels" button clicked');
 
-    
+        if (edge_label_toggle == false) {
+            edge_label_toggle = true;
+            orb.data.getEdges().forEach((edge) => {
+                edge.style.fontSize = 3
+            });
+        } else {
+            edge_label_toggle = false;
+            orb.data.getEdges().forEach((edge) => {
+                edge.style.fontSize = 0
+            });
+        }
+      });
 }
-
 
 export function create_graph() : Orb {
     const container = document.getElementById("graph")!;
@@ -172,11 +188,14 @@ export function create_graph() : Orb {
     const graph_tooltip_header = document.getElementById('graph-tooltip-header')!;
     const graph_tooltip_body = document.getElementById('graph-tooltip-body')!;
 
-
-    
-
     
     const orb = new Orb<MyNode, MyEdge>(container);
+
+    orb.view.setSettings({
+        render: {
+          backgroundColor: '#f0f0f0',
+        },
+      });
 
     //style graph
     
@@ -198,8 +217,8 @@ export function create_graph() : Orb {
             graph_tooltip.style.position = "relative";
             // console.log((event.subject.position as any).x);
             // console.log((event.subject.position as any).y);
-            const node_center_x = event.globalPoint.x - (event.localPoint.x - (event.subject.position as any).x);
-            const node_center_y = event.globalPoint.y - (event.localPoint.y - (event.subject.position as any).y);
+            const node_center_x = event.globalPoint.x - (event.localPoint.x - (event.subject.getCenter() as any).x);
+            const node_center_y = event.globalPoint.y - (event.localPoint.y - (event.subject.getCenter() as any).y);
         
 
             graph_tooltip.style.top = node_center_y + "px";

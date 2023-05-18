@@ -57,7 +57,8 @@ export function setup_search_event(orb: Orb) : void {
         const edge_results = fuse_edges.search(searchTerm);
         const results_nodes = node_results.map(result => result.item);
         const results_edges = edge_results.map(result => result.item);
-
+        console.log(results_edges,results_nodes);
+        
         redraw_graph(orb, results_nodes, results_edges);
     }
 }
