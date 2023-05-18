@@ -15,7 +15,6 @@
                 <div class=" d-flex flex-wrap flex-md-nowrap gap-3 p-2 align-items-center justify-content-start">
                   <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
                       <img id="logoImage" class="mr-3 pull-left" alt="Logo image">
-                      
                   </a>
                   <p class="m-0 display-5 fw-bold text-nowrap">Artifact Graph</p>
                   <!-- <i class="fa fa-search"></i> -->
@@ -36,7 +35,7 @@
                 <h3 class="card-title" id="graph-tooltip-header"></h3>
                 <div class="card-text" id="graph-tooltip-body"></div>
                 <button class="btn btn-primary" id="all_neighbors_btn" data-toggle="tooltip" data-placement="bottom" title="Expand nodes"><i class="fa-solid fa-code-fork fa-rotate-90"></i></button>
-                <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-bars"></i></button>
+                <button class="btn btn-primary" id="toggle_edge_labels" data-toggle="tooltip" data-placement="bottom" title="Toggle edge labels"><i class="fa-solid fa-tags"></i></button>
                 <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-trash"></i></button>
                 <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-close"></i></button>
                 <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-folder"></i></button>
@@ -46,56 +45,22 @@
           
           
         </div>
-        <div class="row">
-          <div class="container">
-            <div id="graph_2"></div>
-          </div>
-        </div>
-        <!-- Floating Action Buttons -->
-        <!-- <div class="fab-container">
-          <div class="fab shadow">
-            <div class="fab-content">
-              <span class="fa-solid fa-gears">...</span>
-            </div>
-          </div>
-          <div class="sub-button shadow">
-            <a href="google.com" target="_blank">
-              <i class="fa-solid fa-code-fork fa-rotate-180"></i>
-            </a>
-          </div>
-          <div class="sub-button shadow">
-            <a href="google.com" target="_blank">
-              <span class="material-icons">mail_outline</span>
-            </a>
-          </div>
-          <div class="sub-button shadow">
-            <a href="google.com" target="_blank">
-              <span class="material-icons">language</span>
-            </a>
-          </div>
-          <div class="sub-button shadow">
-            <a href="google.com" target="_blank">
-              <span class="material-icons">help_outline</span>
-            </a>
-          </div>
-        </div>
-      </div> -->
+
 
       <div class="row">
         <!-- FOOTER -->
         <footer class="d-flex flex-wrap justify-content-between align-items-center my-4 border-top">
-          <div class="col-md-4 d-flex align-items-center">
-            <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
-              <svg class="bi" width="30" height="24"><use xlink:href="#bootstrap"></use></svg>
-            </a>
+          <div class="">
             <span class="mb-3 mb-md-0 text-body-secondary">2023 Artifact-Graph</span>
+            <a href="https://github.com/sebastiandemmer/Artifact-Graph" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-2">
+              github.com/sebastiandemmer/Artifact-Graph
+            </a>
           </div>
-      
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#twitter"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#instagram"></use></svg></a></li>
-            <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24"><use xlink:href="#facebook"></use></svg></a></li>
+            <li class="ms-3"><a class="text-muted" href="https://twitter.com/k0brax"><i class="fa-brands fa-twitter fa-xl"></i></a></li>
           </ul>
+      
+          
         </footer>
       </div>
     </div>
