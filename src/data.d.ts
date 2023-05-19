@@ -8,6 +8,16 @@ export declare function get_all_nodes(): ({
     id: string;
     label: string;
     file_path: string;
+    hive_name?: undefined;
+    tooltip?: undefined;
+    event_id?: undefined;
+    tooltop?: undefined;
+    registry_path?: undefined;
+} | {
+    id: string;
+    label: string;
+    hive_name: string;
+    file_path?: undefined;
     tooltip?: undefined;
     event_id?: undefined;
     tooltop?: undefined;
@@ -17,6 +27,7 @@ export declare function get_all_nodes(): ({
     label: string;
     tooltip: string;
     file_path?: undefined;
+    hive_name?: undefined;
     event_id?: undefined;
     tooltop?: undefined;
     registry_path?: undefined;
@@ -26,6 +37,7 @@ export declare function get_all_nodes(): ({
     tooltip: string;
     event_id: number;
     file_path?: undefined;
+    hive_name?: undefined;
     tooltop?: undefined;
     registry_path?: undefined;
 } | {
@@ -33,6 +45,7 @@ export declare function get_all_nodes(): ({
     label: string;
     tooltop: string;
     file_path?: undefined;
+    hive_name?: undefined;
     tooltip?: undefined;
     event_id?: undefined;
     registry_path?: undefined;
@@ -42,6 +55,7 @@ export declare function get_all_nodes(): ({
     registry_path: string;
     tooltip: string;
     file_path?: undefined;
+    hive_name?: undefined;
     event_id?: undefined;
     tooltop?: undefined;
 })[];
