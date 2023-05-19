@@ -7,6 +7,25 @@
     <title>Artifact Graph</title>
     </head>
 <body>
+    <div id="welcome-modal" class="modal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Welcome to Artifact-Graph</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+            <div class="d-grid gap-2">
+              <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Start exploring</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
     <div class="container-fluid">
       <div class="row">
         <!-- HEADER -->
@@ -35,10 +54,10 @@
                 <h3 class="card-title" id="graph-tooltip-header"></h3>
                 <div class="card-text" id="graph-tooltip-body"></div>
                 <button class="btn btn-primary" id="all_neighbors_btn" data-toggle="tooltip" data-placement="bottom" title="Expand nodes"><i class="fa-solid fa-code-fork fa-rotate-90"></i></button>
+                <button class="btn btn-primary" id="neighbors_btn" data-toggle="tooltip" data-placement="bottom" title="Expand single node"><i class="fa-solid fa-code-fork fa-rotate-90"></i></button>
                 <button class="btn btn-primary" id="toggle_edge_labels" data-toggle="tooltip" data-placement="bottom" title="Toggle edge labels"><i class="fa-solid fa-tags"></i></button>
-                <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-trash"></i></button>
+                <button class="btn btn-secondary" id="remove_node_btn" data-toggle="tooltip" data-placement="bottom" title="Remove node"><i class="fa fa-trash"></i></button>
                 <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-close"></i></button>
-                <button class="btn" data-toggle="tooltip" data-placement="bottom" title="Button disabled" disabled><i class="fa fa-folder"></i></button>
               </div>
             </div>
           </div>

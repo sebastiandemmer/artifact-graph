@@ -2,7 +2,7 @@ import Fuse from 'fuse.js';
 // import { INode } from "@memgraph/orb";
 import {redraw_graph} from "./graph";
 import {Orb} from "@memgraph/orb";
-import {get_all_edges, get_all_nodes} from './data';
+import {get_all_edges, get_all_nodes } from './data';
 
 
 // export function setup_search_event(all_nodes: INode<any, any>[]) : void {

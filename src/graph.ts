@@ -1,6 +1,8 @@
 import { Orb, NodeShapeType, OrbEventType, GraphObjectState, DefaultView } from '@memgraph/orb';
 import  graph_data from '../data/graph_data.json';
+import { get_neighbors } from './data';
 
+var last_clicked_node: any;
 
 export interface MyNode {
     id: string;
@@ -37,7 +39,7 @@ export function redraw_graph(orb: Orb, nodes: Array<any>, edges: Array<any>): vo
     //add new nodes
     orb.data.merge({edges: edges, nodes: nodes});
 
-    style_graph(orb);
+    // style_graph(orb);
     orb.view.render(() => {
         orb.view.recenter();
     });
@@ -153,8 +155,6 @@ export function setup_controls(orb: Orb) : void {
         // No need to get edges because if we remove all the nodes, all the edges will be removed too
         orb.data.remove({ nodeIds: nodeIds });
         style_graph(orb);
-        console.log(new_edges);
-        console.log(new_nodes.flat());
 
         orb.data.merge({edges: new_edges_data, nodes: new_nodes_data});
         orb.view.render(() => {
@@ -162,8 +162,31 @@ export function setup_controls(orb: Orb) : void {
         });
       });
     
+    //add specific neigbours button
+    const btn_neighbors = document.getElementById("neighbors_btn")!;
+    btn_neighbors?.addEventListener('click', function handleClick() {
+        console.log('"btn_neighbors" button clicked');
+
+        const [new_nodes, new_edges] = get_neighbors(last_clicked_node.id);
+        console.log("new nodes: ", new_nodes);
+        console.log("new edges: ", new_edges);
+        orb.data.merge({edges: new_edges, nodes: new_nodes});
+        orb.view.render(() => {
+            orb.view.recenter();
+        });
+      });
+
+        //remove specific node button
+        const btn_remove_node = document.getElementById("remove_node_btn")!;
+        btn_remove_node?.addEventListener('click', function handleClick() {
+            console.log(last_clicked_node);
+            orb.data.remove({edgeIds:[], nodeIds: [last_clicked_node.id]});
+            orb.view.render(() => {
+                orb.view.recenter();
+            });
+          });
     
-    //add all neigbours button
+    //toggle all edge labels
     const btn_edges_toggle = document.getElementById("toggle_edge_labels")!;
     btn_edges_toggle?.addEventListener('click', function handleClick() {
         console.log('"toggle_edge_labels" button clicked');
@@ -235,6 +258,7 @@ export function create_graph() : Orb {
         if(typeof(event) == "undefined") {
             return
         } else {
+            last_clicked_node = event.node;
             const canvas = document.getElementsByTagName("canvas")[0];
             const rect = canvas.getBoundingClientRect();
             graph_tooltip.style.top =  event.localPoint.y + canvas.height/2 + rect.top + "px";
