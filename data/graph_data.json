@@ -190,6 +190,7 @@
         { "id": "task_job_user_sid", "start": "task_job", "label": "CONTAINS", "end": "user_sid" },
         { "id": "task_name_file_tasks", "start": "task_name", "label": "IS_FILENAME", "end": "file_tasks" },
         { "id": "task_name_file_tasks_job", "start": "task_name", "label": "IS_IN_FILENAME", "end": "file_tasks_jobs" },
+        { "id": "file_tasks_jobs_task_job", "start": "file_tasks_jobs", "label":"CONTAINS", "end": "task_job" },
         { "id": "task_name_registry_taskcache_tree", "start": "task_name", "label": "IS_KEY_NAME", "end": "registry_taskcache_tree" },
         { "id": "registry_taskcache_tree_registry_taskcache_tasks", "start": "registry_taskcache_tree", "label": "CONTAINS_GUID", "end": "registry_taskcache_tasks" },
         { "id": "registry_taskcache_tasks_task_xml", "start": "registry_taskcache_tasks", "label": "CONTAINS", "end": "task_xml" },
