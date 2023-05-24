@@ -52,13 +52,7 @@ export function redraw_graph(orb: Orb, nodes: Array<any>, edges: Array<any>): vo
 }
 
 export function style_graph(orb: Orb) : void {
-    orb.setView(
-        (context) => new DefaultView(context, {
-            simulation: {
-                isPhysicsEnabled: true
-            }
-        })
-    )
+
 
     orb.data.setDefaultStyle({
         getNodeStyle(node) {
@@ -76,8 +70,15 @@ export function style_graph(orb: Orb) : void {
                 label: node.data.id,
                 size: 6,
             };
-    
-            if (node.data.label === 'Event') {
+            if (node.data.id.includes('artifact_')) {
+                console.log("artifact_ found");
+                return {
+                    ...basicStyle,
+                    shape:  NodeShapeType.STAR,
+                    size: 13,
+                    color: '#8ddf68',
+                };
+            } else if (node.data.label === 'Event') {
                 return {
                     ...basicStyle,
                     shape: NodeShapeType.CIRCLE,
@@ -106,7 +107,14 @@ export function style_graph(orb: Orb) : void {
                     size: 10,
                     color: '#26A69A',
                 };
-            }
+            } else if (node.data.label.includes('Timestamp')) {
+                return {
+                    ...basicStyle,
+                    shape:  NodeShapeType.TRIANGLE,
+                    size: 10,
+                    color: '#79a1f6',
+                };
+            }  
             return {
                 ...basicStyle
             };
@@ -214,11 +222,16 @@ export function create_graph() : Orb {
     
     const orb = new Orb<MyNode, MyEdge>(container);
 
-    orb.view.setSettings({
-        render: {
-          backgroundColor: '#f0f0f0',
+    orb.setView(
+    (context) => new DefaultView(context, {
+        simulation: {
+            isPhysicsEnabled: true
         },
-      });
+        render: {
+            labelsIsEnabled: true,
+            labelsOnEventIsEnabled: true
+        },
+    }));
 
     //style graph
     
@@ -229,8 +242,10 @@ export function create_graph() : Orb {
 
     // Render and recenter the view
     orb.view.render(() => {
-        orb.view.recenter();
-    });
+        setTimeout(() => {
+          orb.view.recenter();
+        }, 100);
+      });
 
     orb.events.on(OrbEventType.MOUSE_DOUBLE_CLICK, (event) => {
         if(typeof(event.subject) == "undefined") {
